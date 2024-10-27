@@ -5,7 +5,7 @@ const ShowNameButton = (pressFunction) =>{
     return (<>
         <Button
           onPress={pressFunction.press}
-          title="Show"
+          title={pressFunction.title}
           color="#841584"
           accessibilityLabel="Learn more about this purple button"
         />

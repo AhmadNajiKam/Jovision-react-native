@@ -7,7 +7,7 @@ const Task16 = () =>{
     function ShowMyName(){
         setHidden(!Hidden);
     }
-    return (<ShowNameButton press={ShowMyName} state={Hidden} name={name}></ShowNameButton>
+    return (<ShowNameButton press={ShowMyName} state={Hidden} name={name} title="Show"></ShowNameButton>
     );
 } 
 
