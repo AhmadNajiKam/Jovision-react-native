@@ -14,12 +14,18 @@ const Task16 = () =>{
   accessibilityLabel="Learn more about this purple button"
 />
 <View>
-    {!Hidden ? <Text>{name}</Text>:null};
+    {!Hidden ? <Text style= {styles.headerText}>{name}</Text>:null};
 </View>
  </>
     );
 } 
-
-
+const styles = StyleSheet.create({
+    headerText: {
+        fontSize: 20,
+        textAlign: "center",
+        margin: 10,
+        fontWeight: "bold",
+        backgroundColor:"white"}
+})
 
 export default Task16;
