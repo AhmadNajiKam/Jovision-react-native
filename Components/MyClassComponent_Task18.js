@@ -15,12 +15,12 @@ const viewLoadingCom = (value) =>{
 return(
 <View>
 {
-value?
+value&&
 <>
 <ActivityIndicator size="large" color="#00ff00" />
 <Text style={styles.headerText}>Loading ...</Text>
 </>
-:null}
+}
 </View>
 );
 
