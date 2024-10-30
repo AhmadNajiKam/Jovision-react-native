@@ -1,6 +1,6 @@
 'use strict';
 
-import LoadingComponent from '../Components/MyClassComponent_Task18';
+import LoadingComponent from '../Components/ActivityIndicatorComponent';
 const Task18 = () =>{
 return(
 <LoadingComponent>
