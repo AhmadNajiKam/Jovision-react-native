@@ -1,10 +1,16 @@
 'use strict';
 
-import MyClassPage from "../Components/MyClassPage";
-
+import MyClassPage2 from "../Components/MyClassPage2";
+import { useState } from 'react';
 
 
 const Task20 = () => {
 
-    return (<MyClassPage></MyClassPage>);
+    const [Loaded,setLoaded] = useState(true);
+    setTimeout(()=>{setLoaded(false);},10000)
+    return (<> 
+    {Loaded && <MyClassPage2></MyClassPage2>}
+    </>
+  );
 }
+export default Task20;
