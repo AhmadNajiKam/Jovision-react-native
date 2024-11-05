@@ -2,6 +2,7 @@
 import React, { Component} from 'react';
 import { Button, View } from 'react-native';
 import LoadingComponent from '../Components/ActivityIndicatorComponent';
+import ShowNameButton from './ShowNameButtonCom';
 class MyClassPage extends Component{
     state = {
         LoadComponent :false,
@@ -14,11 +15,11 @@ class MyClassPage extends Component{
         return (
         <View>
         <Button
-        onPress={this.whenPressed}
-        title="Show"
-        color="#841584"
-        accessibilityLabel="Learn more about this purple button"
-      />
+          onPress={this.whenPressed}
+          title="Show"
+          color="#841584"
+          accessibilityLabel="Learn more about this purple button"
+        />
       {this.state.LoadComponent &&  <LoadingComponent />}
       </View>);
     }
