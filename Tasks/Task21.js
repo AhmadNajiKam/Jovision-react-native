@@ -1,6 +1,6 @@
 'use strict';
 import { Button } from "react-native";
-import MyFunctionalComponent from "../Components/MyFunctionalComponent";
+import MyFunctionalComponent from "../Components/MyFunctionPage";
 import { useEffect,useState } from "react";
 const Task21 =()=>{
 const [Load,setLoad] = useState(true);
