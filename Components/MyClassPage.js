@@ -1,29 +1,30 @@
 'use strict';
 import React, { Component} from 'react';
-import { Button, View } from 'react-native';
-import LoadingComponent from '../Components/ActivityIndicatorComponent';
-import ShowNameButton from './ShowNameButtonCom';
+import { TextInput } from 'react-native';
+import { StyleSheet } from 'react-native';
 class MyClassPage extends Component{
     state = {
-        LoadComponent :false,
+      text :'Useless',
     };
-    whenPressed = () =>{
-        this.setState({LoadComponent:true});
-        setTimeout(()=>{this.setState({LoadComponent:false})},5000);
+    setText = (input) =>{
+        this.setState({text:input});
     }
     render(){
         return (
-        <View>
-        <Button
-          onPress={this.whenPressed}
-          title="Show"
-          color="#841584"
-          accessibilityLabel="Learn more about this purple button"
-        />
-      {this.state.LoadComponent &&  <LoadingComponent />}
-      </View>);
+          <TextInput
+          style={styles.input}
+          onChangeText={(text)=>{this.setText(text);this.props.fun(text);}}
+          value={this.text}
+        />);
     }
     
 }
-
+const styles = StyleSheet.create({
+  input: {
+    height: 40,
+    margin: 12,
+    borderWidth: 1,
+    padding: 10,
+  },
+});
 export default MyClassPage;
