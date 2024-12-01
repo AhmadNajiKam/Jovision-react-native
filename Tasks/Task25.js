@@ -3,19 +3,21 @@ import { StyleSheet } from "react-native";
 import { TextInput } from "react-native";
 import { useState } from "react";
 import { useRef } from "react";
-import MyFunctionalComponent from "../Components/MyFunctionPage";
-const Task24 = () =>{
+import MyClassPage from "../Components/MyClassPage";
+const Task25 = () =>{
     const [text,setText] = useState('Default');
-    const CurrentChild = useRef();
+    const CurrentChild = useRef(null);
+    const changeInput = (input) =>{
+        setText(input);CurrentChild.current.setText(text);   
+    }
     return (<>
      
     <TextInput
         style={styles.input}
-        onChangeText={(text)=>{setText(text);CurrentChild.current.ChangeText(text);   
-        }}
+        onChangeText={changeInput}
         >
-<MyFunctionalComponent ref={CurrentChild} />
         </TextInput>
+        <MyClassPage ref={CurrentChild} />
     </>
    
       );
@@ -30,4 +32,4 @@ const styles = StyleSheet.create({
       padding: 10,
     },
   });
-  export default Task24;
+  export default Task25;
