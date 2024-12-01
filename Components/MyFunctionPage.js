@@ -1,16 +1,20 @@
 'use strict';
-import { useState } from "react";
-import { TextInput } from "react-native";
 import { StyleSheet } from "react-native";
-const MyFunctionalComponent = (props) =>
-{
-    const [text,setText] = useState('Useless');
-return (<TextInput
-    style={styles.input}
-    onChangeText={(text)=>{setText(text);props.fun(text);}}
-    value={text}
-  />);
-}
+import { forwardRef } from "react";
+import { useImperativeHandle } from "react";
+import { useState } from "react";
+import { Text } from "react-native";
+const MyFunctionalComponent = forwardRef((props, ref) => {
+  const [text, setText] = useState('Default Text');
+
+  useImperativeHandle(ref, () => ({
+   ChangeText(input) {
+      setText(input);
+    }
+  }));
+
+  return (<Text ref={MyFunctionalComponent} style={styles}>{text}</Text>);
+});
 
 const styles = StyleSheet.create({
     input: {
