@@ -7,12 +7,12 @@
 'use strict'
 import React from 'react';
 
-import Task26 from './Tasks/Task26';
+import Task27 from './Tasks/Task27';
 
 export default function App(){
 
 return (
-<Task26></Task26>
+<Task27></Task27>
   
 );
 
